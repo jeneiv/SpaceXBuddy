@@ -24,8 +24,6 @@ struct ImageGalleryView: View {
 }
 
 struct ImageGalleryView_Previews: PreviewProvider {
-    @State var isShowed : Bool = true
-    
     static var previews: some View {
         ImageGalleryView(imageURLStrings: [
             "https://live.staticflickr.com/65535/49635401403_96f9c322dc_o.jpg",

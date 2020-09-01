@@ -22,6 +22,12 @@ extension SpaceXBuddy.API {
         case launches = "v4/launches"
     }
     
+    static var spaceXJSONDecoder : JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }
+    
     static func upcomingLaunchesRequest() -> URLRequest {
         return URLRequest(url: URL(Path.upcomingLaunches)!)
     }

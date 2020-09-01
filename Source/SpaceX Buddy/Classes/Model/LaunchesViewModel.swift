@@ -43,7 +43,7 @@ extension SpaceXBuddy {
         func fetch() {
             self.cancellable = URLSession.shared.dataTaskPublisher(for: self.request(for: self.dataType))
                 .map { $0.data }
-                .decode(type: [SpaceXBuddy.Launch].self, decoder: self.decoder)
+                .decode(type: [SpaceXBuddy.Launch].self, decoder: API.spaceXJSONDecoder)
                 .replaceError(with: [])
                 .receive(on: DispatchQueue.main)
                 .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },

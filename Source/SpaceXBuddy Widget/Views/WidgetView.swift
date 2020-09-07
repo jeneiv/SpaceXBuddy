@@ -12,7 +12,7 @@ extension SpaceXBuddy {
     struct WidgetContainerView : View {
         @Environment(\.widgetFamily) var family: WidgetFamily
         
-        var entry: Provider.Entry
+        var entry: SpaceXBuddyWidgetTimelineProvider.Entry
 
         var body: some View {
             if let launch = entry.launch {

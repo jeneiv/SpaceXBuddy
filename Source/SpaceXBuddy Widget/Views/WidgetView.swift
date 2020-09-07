@@ -63,6 +63,7 @@ extension SpaceXBuddy {
                     Text(launch.name)
                     Text(launch.localDate, style: .date)
                     Text(launch.localDate, style: .time)
+                    Text(launch.localDate, style: .relative)
                 }
                 .font(.callout)
                 Spacer()
@@ -85,6 +86,7 @@ extension SpaceXBuddy {
                         Text(launch.name)
                         Text(launch.localDate, style: .date)
                         Text(launch.localDate, style: .time)
+                        Text(launch.localDate, style: .relative)
                     }
                     .font(.callout)
                     Spacer()

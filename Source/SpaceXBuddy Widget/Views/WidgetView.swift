@@ -12,7 +12,7 @@ extension SpaceXBuddy {
     struct WidgetContainerView : View {
         @Environment(\.widgetFamily) var family: WidgetFamily
         
-        var entry: Provider.Entry
+        var entry: SpaceXBuddyWidgetTimelineProvider.Entry
 
         var body: some View {
             if let launch = entry.launch {
@@ -63,6 +63,7 @@ extension SpaceXBuddy {
                     Text(launch.name)
                     Text(launch.localDate, style: .date)
                     Text(launch.localDate, style: .time)
+                    Text(launch.localDate, style: .relative)
                 }
                 .font(.callout)
                 Spacer()
@@ -85,6 +86,7 @@ extension SpaceXBuddy {
                         Text(launch.name)
                         Text(launch.localDate, style: .date)
                         Text(launch.localDate, style: .time)
+                        Text(launch.localDate, style: .relative)
                     }
                     .font(.callout)
                     Spacer()

@@ -15,7 +15,7 @@ extension SpaceXBuddy {
         let name : String
         let upcoming : Bool
         let id : String
-        let failures : [String]
+        let failures : [Failure]
         let dateUTC : String
         let dateTimeStamp : Int
         let localDate : Date
@@ -59,6 +59,12 @@ extension SpaceXBuddy.Launch {
     struct FlickrLinks : Codable {
         let small : [String]
         let original : [String]
+    }
+    
+    struct Failure : Codable {
+        let time : Double
+        let altitude : Double?
+        let reason : String
     }
 }
 

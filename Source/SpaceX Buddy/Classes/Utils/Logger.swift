@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import OSLog
+import os.log
 
 extension SpaceXBuddy {
     static let logger = Logger(subsystem: "com.victo.spaceXBuddy", category: "Main")

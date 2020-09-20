@@ -50,10 +50,10 @@ struct LaunchDetailsView: View {
                 VStack (alignment: .leading) {
                     Text("Failures (\(launch.failures.count))")
                         .font(.callout)
-                    ForEach (launch.failures, id: \.hash) { failure in
+                    ForEach (launch.failures, id: \.reason.hash) { failure in
                         HStack (alignment: .top) {
                             Text("•")
-                            Text(failure)
+                            Text(failure.reason)
                         }
                     }
                 }

@@ -68,8 +68,8 @@ struct PreviewData {
                                         upcoming: true,
                                         id: "0",
                                         failures: [
-                                            "engine failure",
-                                            "catapult error"
+                                            SpaceXBuddy.Launch.Failure(time: 4, altitude: 200, reason: "engine failure"),
+                                            SpaceXBuddy.Launch.Failure(time: 200, altitude: 2000, reason: "catapult error"),
                                         ],
                                         dateUTC: "2006-03-24T22:30:00.000Z",
                                         dateTimeStamp: 1143239400,
@@ -98,8 +98,8 @@ struct PreviewData {
                                         upcoming: true,
                                         id: "0",
                                         failures: [
-                                            "engine failure",
-                                            "catapult error"
+                                            SpaceXBuddy.Launch.Failure(time: 4, altitude: 200, reason: "engine failure"),
+                                            SpaceXBuddy.Launch.Failure(time: 200, altitude: 2000, reason: "catapult error"),
                                         ],
                                         dateUTC: "2006-03-24T22:30:00.000Z",
                                         dateTimeStamp: 1143239400,

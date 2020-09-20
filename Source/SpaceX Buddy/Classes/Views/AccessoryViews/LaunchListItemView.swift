@@ -9,6 +9,11 @@ import SwiftUI
 
 struct LaunchListItemView : View {
     var launch : SpaceXBuddy.Launch
+    private var dateFormatter : DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter
+    }
     
     var body: some View {
         HStack {
@@ -17,7 +22,7 @@ struct LaunchListItemView : View {
                 
             VStack (alignment: .leading) {
                 Text(launch.name)
-                Text(launch.humanReadableDate)
+                Text(dateFormatter.string(from: launch.localDate))
                 Spacer()
             }
             .font(.subheadline)

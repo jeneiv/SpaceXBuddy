@@ -47,6 +47,7 @@
 		15B87A7024F90A32002A43E6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A6F24F90A32002A43E6 /* PreviewData.swift */; };
 		15B87A7124F90A32002A43E6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A6F24F90A32002A43E6 /* PreviewData.swift */; };
 		15B87A7424F90D63002A43E6 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A7224F90D63002A43E6 /* WidgetView.swift */; };
+		15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */; };
 		15D752FF25066D1F00B27069 /* SpaceXLaunchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D752FE25066D1F00B27069 /* SpaceXLaunchEntry.swift */; };
 		15D7530225066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7530125066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift */; };
 		15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E7340124C9786A00F83C4C /* AsyncImageView.swift */; };
@@ -126,6 +127,7 @@
 		15B87A5F24F905A0002A43E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15B87A6F24F90A32002A43E6 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		15B87A7224F90D63002A43E6 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXBuddyAppDelegate.swift; sourceTree = "<group>"; };
 		15D752FE25066D1F00B27069 /* SpaceXLaunchEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchEntry.swift; sourceTree = "<group>"; };
 		15D7530125066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXBuddyWidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		15E7340124C9786A00F83C4C /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				150AE59824AD12DC003359B4 /* Resources */,
 				150AE59724AD12D5003359B4 /* Classes */,
 				150AE56C24AD12AC003359B4 /* SpaceX_BuddyApp.swift */,
+				15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */,
 				150AE57524AD12B4003359B4 /* Info.plist */,
 				150AE57224AD12B4003359B4 /* Preview Content */,
 			);
@@ -531,6 +534,7 @@
 				1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */,
 				150AE5A124AD1A3D003359B4 /* URLExtension.swift in Sources */,
 				150AE59A24AD16E3003359B4 /* SpaceXBuddy.swift in Sources */,
+				15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */,
 				15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */,
 				150AE5BB24AE1F11003359B4 /* LaunchBadgeView.swift in Sources */,
 				150AE5AC24ADFE35003359B4 /* Launch.swift in Sources */,

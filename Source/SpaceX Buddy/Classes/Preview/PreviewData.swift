@@ -34,7 +34,7 @@ struct PreviewData {
                                         localDate: Date())
     }
     
-    static internal func mockLaunchWithActiveSocialLinks() -> SpaceXBuddy.Launch {
+    static internal func mockLaunchWithActiveSocialLinks(upcoming: Bool = true) -> SpaceXBuddy.Launch {
         let patch = SpaceXBuddy.Launch.Patch(
             small: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
             large: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
@@ -65,7 +65,7 @@ struct PreviewData {
         return SpaceXBuddy.Launch(links: links,
                                         details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget massa non est aliquam malesuada et sed eros. Mauris sed tellus eros. Vivamus luctus tristique neque et pharetra. Donec non fringilla nunc.", flightNumber: 1,
                                         name: "Mock Launch",
-                                        upcoming: true,
+                                        upcoming: upcoming,
                                         id: "0",
                                         failures: [
                                             SpaceXBuddy.Launch.Failure(time: 4, altitude: 200, reason: "engine failure"),
@@ -77,7 +77,7 @@ struct PreviewData {
                                         Date())
     }
     
-    static internal func mockLaunchInActiveSocialLinks() -> SpaceXBuddy.Launch {
+    static internal func mockLaunchInActiveSocialLinks(upcoming: Bool = true) -> SpaceXBuddy.Launch {
         let patch = SpaceXBuddy.Launch.Patch(
             small: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
             large: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
@@ -95,7 +95,7 @@ struct PreviewData {
         return SpaceXBuddy.Launch(links: links,
                                         details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget massa non est aliquam malesuada et sed eros. Mauris sed tellus eros. Vivamus luctus tristique neque et pharetra. Donec non fringilla nunc.", flightNumber: 1,
                                         name: "Mock Launch",
-                                        upcoming: true,
+                                        upcoming: upcoming,
                                         id: "0",
                                         failures: [
                                             SpaceXBuddy.Launch.Failure(time: 4, altitude: 200, reason: "engine failure"),

@@ -34,6 +34,7 @@
 		155FF9D224FE32960088B54C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE59C24AD1726003359B4 /* RequestBuilder.swift */; };
 		155FF9D324FE61610088B54C /* WidgetDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FF9D024FE321F0088B54C /* WidgetDataService.swift */; };
 		155FF9D424FE6BD90088B54C /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE5A024AD1A3D003359B4 /* URLExtension.swift */; };
+		156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156507412517CAF30024812B /* LaunchNotificationModel.swift */; };
 		156AA10D24C1811A00E0C308 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10C24C1811A00E0C308 /* LaunchListView.swift */; };
 		156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */; };
 		1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FA6124D9927F0056A806 /* ImageGalleryView.swift */; };
@@ -115,6 +116,7 @@
 		1552733424F7A4910033A3FF /* CountdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHelper.swift; sourceTree = "<group>"; };
 		15546C8224F6D13A001C080D /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
 		155FF9D024FE321F0088B54C /* WidgetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataService.swift; sourceTree = "<group>"; };
+		156507412517CAF30024812B /* LaunchNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotificationModel.swift; sourceTree = "<group>"; };
 		156AA10C24C1811A00E0C308 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
 		1582FA6124D9927F0056A806 /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				150AE5A324AD21EC003359B4 /* Launch.swift */,
 				156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */,
+				156507412517CAF30024812B /* LaunchNotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				150AE5A824ADE059003359B4 /* MainView.swift in Sources */,
 				1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */,
 				150AE5A124AD1A3D003359B4 /* URLExtension.swift in Sources */,
+				156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */,
 				150AE59A24AD16E3003359B4 /* SpaceXBuddy.swift in Sources */,
 				15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */,
 				15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */,

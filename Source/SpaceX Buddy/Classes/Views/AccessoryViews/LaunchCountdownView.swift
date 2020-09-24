@@ -16,6 +16,7 @@ struct LaunchCountdownView: View {
     
     var body: some View {
         Text(currentCountdownText)
+            .fixedSize(horizontal: true, vertical: false)
         .onReceive(timer) { timerDate in
             let componenets = CountdownHelper.timeComponenets(in: launchDate.timeIntervalSince(timerDate))
             currentCountdownText = "\(componenets.days) days \(componenets.hours) hours \(componenets.minutes) mins \(componenets.seconds) seconds"

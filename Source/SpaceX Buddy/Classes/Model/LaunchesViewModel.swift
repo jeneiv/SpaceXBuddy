@@ -42,15 +42,26 @@ extension SpaceXBuddy {
         
         func fetch() {
             self.cancellable = URLSession.shared.dataTaskPublisher(for: self.request(for: self.dataType))
-                .map { $0.data }
-                .decode(type: [SpaceXBuddy.Launch].self, decoder: API.spaceXJSONDecoder)
-                .replaceError(with: [])
+                .map {
+                    $0.data
+                }
+                .decode(
+                    type: [SpaceXBuddy.Launch].self,
+                    decoder: API.spaceXJSONDecoder
+                )
+                .mapError({ (error: Error) -> Error in
+                    print("Error Durring Decoding Launches Response: \(error)")
+                    return error
+                })
+                .replaceError(
+                    with: []
+                )
                 .receive(on: DispatchQueue.main)
                 .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
                               receiveOutput: Optional.none,
                               receiveCompletion: { [weak self] _ in self?.onFinish() },
                               receiveCancel: { [weak self] in self?.onFinish() })
-                .eraseToAnyPublisher()
+                // .eraseToAnyPublisher() // This erase only necessary if you're not replacing errors by `.replaceError(:)`
                 // You can use sink to handle/surface the value in any other way you want to
                 .sink(receiveValue: { result in
                     self.handleResult(result)

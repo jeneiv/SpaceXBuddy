@@ -25,15 +25,19 @@
 		150AE5BB24AE1F11003359B4 /* LaunchBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE5BA24AE1F11003359B4 /* LaunchBadgeView.swift */; };
 		153BB6C924F6A57B0026EB01 /* LaunchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BB6C824F6A57B0026EB01 /* LaunchListItemView.swift */; };
 		153BB6CB24F6A5F60026EB01 /* LaunchLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BB6CA24F6A5F60026EB01 /* LaunchLinksView.swift */; };
+		154AEA4D25175D1C0021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
+		154AEA5225175D1E0021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
+		154AEA5725175D1F0021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
+		154AEA5C25175D200021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
 		1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552733424F7A4910033A3FF /* CountdownHelper.swift */; };
 		15546C8324F6D13A001C080D /* LaunchCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15546C8224F6D13A001C080D /* LaunchCountdownView.swift */; };
 		155FF9D224FE32960088B54C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE59C24AD1726003359B4 /* RequestBuilder.swift */; };
 		155FF9D324FE61610088B54C /* WidgetDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FF9D024FE321F0088B54C /* WidgetDataService.swift */; };
 		155FF9D424FE6BD90088B54C /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE5A024AD1A3D003359B4 /* URLExtension.swift */; };
+		156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156507412517CAF30024812B /* LaunchNotificationModel.swift */; };
 		156AA10D24C1811A00E0C308 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10C24C1811A00E0C308 /* LaunchListView.swift */; };
 		156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */; };
 		1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FA6124D9927F0056A806 /* ImageGalleryView.swift */; };
-		15B59F2924C1C2AD0062700F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
 		15B87A5724F9059E002A43E6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5624F9059E002A43E6 /* WidgetKit.framework */; };
 		15B87A5924F9059E002A43E6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5824F9059E002A43E6 /* SwiftUI.framework */; };
 		15B87A5C24F9059E002A43E6 /* SpaceXBuddy_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A5B24F9059E002A43E6 /* SpaceXBuddy_Widget.swift */; };
@@ -44,6 +48,7 @@
 		15B87A7024F90A32002A43E6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A6F24F90A32002A43E6 /* PreviewData.swift */; };
 		15B87A7124F90A32002A43E6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A6F24F90A32002A43E6 /* PreviewData.swift */; };
 		15B87A7424F90D63002A43E6 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A7224F90D63002A43E6 /* WidgetView.swift */; };
+		15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */; };
 		15D752FF25066D1F00B27069 /* SpaceXLaunchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D752FE25066D1F00B27069 /* SpaceXLaunchEntry.swift */; };
 		15D7530225066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7530125066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift */; };
 		15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E7340124C9786A00F83C4C /* AsyncImageView.swift */; };
@@ -111,6 +116,7 @@
 		1552733424F7A4910033A3FF /* CountdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHelper.swift; sourceTree = "<group>"; };
 		15546C8224F6D13A001C080D /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
 		155FF9D024FE321F0088B54C /* WidgetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataService.swift; sourceTree = "<group>"; };
+		156507412517CAF30024812B /* LaunchNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotificationModel.swift; sourceTree = "<group>"; };
 		156AA10C24C1811A00E0C308 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
 		1582FA6124D9927F0056A806 /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		15B87A5F24F905A0002A43E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15B87A6F24F90A32002A43E6 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		15B87A7224F90D63002A43E6 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXBuddyAppDelegate.swift; sourceTree = "<group>"; };
 		15D752FE25066D1F00B27069 /* SpaceXLaunchEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchEntry.swift; sourceTree = "<group>"; };
 		15D7530125066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXBuddyWidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		15E7340124C9786A00F83C4C /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -192,6 +199,7 @@
 				150AE59824AD12DC003359B4 /* Resources */,
 				150AE59724AD12D5003359B4 /* Classes */,
 				150AE56C24AD12AC003359B4 /* SpaceX_BuddyApp.swift */,
+				15D36CF92517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift */,
 				150AE57524AD12B4003359B4 /* Info.plist */,
 				150AE57224AD12B4003359B4 /* Preview Content */,
 			);
@@ -272,6 +280,7 @@
 			children = (
 				150AE5A324AD21EC003359B4 /* Launch.swift */,
 				156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */,
+				156507412517CAF30024812B /* LaunchNotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,15 +536,17 @@
 				150AE5A824ADE059003359B4 /* MainView.swift in Sources */,
 				1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */,
 				150AE5A124AD1A3D003359B4 /* URLExtension.swift in Sources */,
+				156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */,
 				150AE59A24AD16E3003359B4 /* SpaceXBuddy.swift in Sources */,
+				15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */,
 				15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */,
 				150AE5BB24AE1F11003359B4 /* LaunchBadgeView.swift in Sources */,
 				150AE5AC24ADFE35003359B4 /* Launch.swift in Sources */,
 				15546C8324F6D13A001C080D /* LaunchCountdownView.swift in Sources */,
+				154AEA4D25175D1C0021F073 /* Logger.swift in Sources */,
 				156AA10D24C1811A00E0C308 /* LaunchListView.swift in Sources */,
 				15B87A7024F90A32002A43E6 /* PreviewData.swift in Sources */,
 				1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */,
-				15B59F2924C1C2AD0062700F /* Logger.swift in Sources */,
 				150AE56D24AD12AC003359B4 /* SpaceX_BuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +559,7 @@
 				150AE5A924ADE059003359B4 /* MainView.swift in Sources */,
 				150AE5A224AD1A3D003359B4 /* URLExtension.swift in Sources */,
 				150AE59B24AD16E3003359B4 /* SpaceXBuddy.swift in Sources */,
+				154AEA5725175D1F0021F073 /* Logger.swift in Sources */,
 				150AE5AB24ADFE34003359B4 /* Launch.swift in Sources */,
 				150AE57F24AD12B4003359B4 /* SpaceX_BuddyTests.swift in Sources */,
 			);
@@ -558,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				150AE58A24AD12B4003359B4 /* SpaceX_BuddyUITests.swift in Sources */,
+				154AEA5C25175D200021F073 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				155FF9D324FE61610088B54C /* WidgetDataService.swift in Sources */,
+				154AEA5225175D1E0021F073 /* Logger.swift in Sources */,
 				15B87A7124F90A32002A43E6 /* PreviewData.swift in Sources */,
 				15D7530225066D8500B27069 /* SpaceXBuddyWidgetTimelineProvider.swift in Sources */,
 				15B87A6824F905E8002A43E6 /* SpaceXBuddy.swift in Sources */,

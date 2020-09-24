@@ -12,6 +12,7 @@ extension SpaceXBuddy {
     
     class LaunchNotificationModel : ObservableObject {
         @Published private (set) var hasPendingNotification : Bool = false
+        @Published var notificationsDisabled : Bool = false
         
         private let launch : Launch
         private var notificationCenter : UNUserNotificationCenter = UNUserNotificationCenter.current()
@@ -54,7 +55,9 @@ extension SpaceXBuddy {
                 }
                 else {
                     SpaceXBuddy.logger.debug("User should be redirected to notification settings")
-                    // TODO: Redirect user to notification settings
+                    DispatchQueue.main.async {
+                        self.notificationsDisabled = true
+                    }
                 }
             }
         }

@@ -70,6 +70,17 @@ struct LaunchDetailsView: View {
             .padding()
             .font(.subheadline)
             .navigationBarTitle (Text(launch.name))
+            .alert(isPresented: $launchNotificationModel.notificationsDisabled, content: {
+                Alert(title: Text("Notification Error"),
+                      message: Text("Please turn on notifications for the application"),
+                      primaryButton: .destructive(Text("Go to App Settings")) {
+                        if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(settingsUrl, options: [:], completionHandler: Optional.none)
+                        }
+                      },
+                      secondaryButton: .cancel()
+                )
+            })
         }
     }
 }

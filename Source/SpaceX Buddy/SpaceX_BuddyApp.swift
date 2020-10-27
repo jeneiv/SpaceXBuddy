@@ -23,6 +23,8 @@ struct SpaceX_BuddyApp: App {
             switch result {
             case .success:
                 SpaceXBuddy.logger.info("Core Data has has been initialised successfully")
+                let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
+                SpaceXBuddy.logger.info("Chat Data DB Location: \(String(describing: url!))")
             case .error(let error):
                 SpaceXBuddy.logger.error("Core Data stack initialised failed with error: \(error.localizedDescription)")
             }

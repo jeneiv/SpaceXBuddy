@@ -40,6 +40,7 @@
 		156AA10D24C1811A00E0C308 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10C24C1811A00E0C308 /* LaunchListView.swift */; };
 		156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */; };
 		1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FA6124D9927F0056A806 /* ImageGalleryView.swift */; };
+		15A2D0432548497B00C37816 /* StringArrayValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */; };
 		15B87A5724F9059E002A43E6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5624F9059E002A43E6 /* WidgetKit.framework */; };
 		15B87A5924F9059E002A43E6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5824F9059E002A43E6 /* SwiftUI.framework */; };
 		15B87A5C24F9059E002A43E6 /* SpaceXBuddy_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A5B24F9059E002A43E6 /* SpaceXBuddy_Widget.swift */; };
@@ -124,6 +125,7 @@
 		156AA10C24C1811A00E0C308 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
 		1582FA6124D9927F0056A806 /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
+		15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringArrayValueTransformer.swift; sourceTree = "<group>"; };
 		15B59F2824C1C2AD0062700F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		15B87A5424F9059E002A43E6 /* SpaceXBuddy WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SpaceXBuddy WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B87A5624F9059E002A43E6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -265,6 +267,7 @@
 				150AE5A024AD1A3D003359B4 /* URLExtension.swift */,
 				15B59F2824C1C2AD0062700F /* Logger.swift */,
 				1552733424F7A4910033A3FF /* CountdownHelper.swift */,
+				15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 			files = (
 				15672FBC2538774D005E8547 /* PersistencyController.swift in Sources */,
 				153BB6C924F6A57B0026EB01 /* LaunchListItemView.swift in Sources */,
+				15A2D0432548497B00C37816 /* StringArrayValueTransformer.swift in Sources */,
 				150AE59D24AD1726003359B4 /* RequestBuilder.swift in Sources */,
 				156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */,
 				153BB6CB24F6A5F60026EB01 /* LaunchLinksView.swift in Sources */,

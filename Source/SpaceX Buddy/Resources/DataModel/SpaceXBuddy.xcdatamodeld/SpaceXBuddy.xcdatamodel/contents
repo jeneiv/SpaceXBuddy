@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDLaunch" representedClassName="CDLaunch" syncable="YES" codeGenerationType="class">
-        <attribute name="dateTimeStamp" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateTimeStamp" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dateUTC" attributeType="String"/>
         <attribute name="details" optional="YES" attributeType="String"/>
-        <attribute name="flightNumber" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="flightNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="localDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="upcoming" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="failures" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLaunchFaliure"/>
+        <relationship name="failures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDLaunchFailure"/>
         <relationship name="links" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLaunchLink"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -18,7 +18,7 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="CDLaunchFaliure" representedClassName="CDLaunchFaliure" syncable="YES" codeGenerationType="class">
+    <entity name="CDLaunchFailure" representedClassName="CDLaunchFailure" syncable="YES" codeGenerationType="class">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="reason" attributeType="String"/>
         <attribute name="time" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -45,11 +45,11 @@
         <attribute name="recovery" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CDLaunch" positionX="-119.58984375" positionY="-168.9140625" width="128" height="193"/>
+        <element name="CDLaunch" positionX="-119.58984375" positionY="-168.9140625" width="128" height="28"/>
+        <element name="CDLaunchFailure" positionX="165.09375" positionY="-168.171875" width="128" height="28"/>
+        <element name="CDLaunchFlickrLink" positionX="345.83203125" positionY="75.80078125" width="128" height="73"/>
         <element name="CDLaunchLink" positionX="164.875" positionY="-103.5390625" width="128" height="118"/>
-        <element name="CDLaunchFaliure" positionX="165.09375" positionY="-168.171875" width="128" height="88"/>
         <element name="CDLaunchPatch" positionX="-127.9140625" positionY="195.0859375" width="128" height="73"/>
         <element name="CDLaunchRedditLink" positionX="-243.1015625" positionY="16.52734375" width="128" height="103"/>
-        <element name="CDLaunchFlickrLink" positionX="345.83203125" positionY="75.80078125" width="128" height="73"/>
     </elements>
 </model>

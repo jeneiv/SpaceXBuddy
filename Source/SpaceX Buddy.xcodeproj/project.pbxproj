@@ -39,8 +39,11 @@
 		15672FC725387C4A005E8547 /* SpaceXBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15672FC525387C49005E8547 /* SpaceXBuddy.xcdatamodeld */; };
 		156AA10D24C1811A00E0C308 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10C24C1811A00E0C308 /* LaunchListView.swift */; };
 		156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */; };
+		156B9900254AAC83008C4576 /* CDLaunch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B98FF254AAC83008C4576 /* CDLaunch+Extensions.swift */; };
+		156B9912254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */; };
 		1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FA6124D9927F0056A806 /* ImageGalleryView.swift */; };
 		15A2D0432548497B00C37816 /* StringArrayValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */; };
+		15B10736254AB1C20055CA3C /* CDLaunchLink+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */; };
 		15B87A5724F9059E002A43E6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5624F9059E002A43E6 /* WidgetKit.framework */; };
 		15B87A5924F9059E002A43E6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5824F9059E002A43E6 /* SwiftUI.framework */; };
 		15B87A5C24F9059E002A43E6 /* SpaceXBuddy_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B87A5B24F9059E002A43E6 /* SpaceXBuddy_Widget.swift */; };
@@ -124,8 +127,11 @@
 		15672FC625387C4A005E8547 /* SpaceXBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXBuddy.xcdatamodel; sourceTree = "<group>"; };
 		156AA10C24C1811A00E0C308 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
+		156B98FF254AAC83008C4576 /* CDLaunch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLaunch+Extensions.swift"; sourceTree = "<group>"; };
+		156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLaunchFaliure+Extensions.swift"; sourceTree = "<group>"; };
 		1582FA6124D9927F0056A806 /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
 		15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringArrayValueTransformer.swift; sourceTree = "<group>"; };
+		15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLaunchLink+Extensions.swift"; sourceTree = "<group>"; };
 		15B59F2824C1C2AD0062700F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		15B87A5424F9059E002A43E6 /* SpaceXBuddy WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SpaceXBuddy WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B87A5624F9059E002A43E6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -287,6 +293,7 @@
 		150AE5AA24ADFD5D003359B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15B1073B254AE3A30055CA3C /* CoreDataExtensons */,
 				150AE5A324AD21EC003359B4 /* Launch.swift */,
 				156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */,
 				156507412517CAF30024812B /* LaunchNotificationModel.swift */,
@@ -336,6 +343,16 @@
 				15672FC525387C49005E8547 /* SpaceXBuddy.xcdatamodeld */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		15B1073B254AE3A30055CA3C /* CoreDataExtensons */ = {
+			isa = PBXGroup;
+			children = (
+				156B98FF254AAC83008C4576 /* CDLaunch+Extensions.swift */,
+				156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */,
+				15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */,
+			);
+			path = CoreDataExtensons;
 			sourceTree = "<group>";
 		};
 		15B87A5524F9059E002A43E6 /* Frameworks */ = {
@@ -554,10 +571,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				15672FBC2538774D005E8547 /* PersistencyController.swift in Sources */,
+				156B9900254AAC83008C4576 /* CDLaunch+Extensions.swift in Sources */,
 				153BB6C924F6A57B0026EB01 /* LaunchListItemView.swift in Sources */,
 				15A2D0432548497B00C37816 /* StringArrayValueTransformer.swift in Sources */,
 				150AE59D24AD1726003359B4 /* RequestBuilder.swift in Sources */,
 				156AA10F24C1816A00E0C308 /* LaunchesViewModel.swift in Sources */,
+				156B9912254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift in Sources */,
 				153BB6CB24F6A5F60026EB01 /* LaunchLinksView.swift in Sources */,
 				15E7340424CAD4EA00F83C4C /* LaunchDetailsView.swift in Sources */,
 				150AE5A824ADE059003359B4 /* MainView.swift in Sources */,
@@ -566,6 +585,7 @@
 				156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */,
 				150AE59A24AD16E3003359B4 /* SpaceXBuddy.swift in Sources */,
 				15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */,
+				15B10736254AB1C20055CA3C /* CDLaunchLink+Extensions.swift in Sources */,
 				15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */,
 				150AE5BB24AE1F11003359B4 /* LaunchBadgeView.swift in Sources */,
 				15672FC725387C4A005E8547 /* SpaceXBuddy.xcdatamodeld in Sources */,

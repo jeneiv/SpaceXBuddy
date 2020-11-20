@@ -15,7 +15,7 @@ extension CDLaunch {
 
         // Direct data transfer from launch itself
         cdLaunch.flightNumber = Int32(launch.flightNumber)
-        cdLaunch.id = launch.id
+        cdLaunch.launchID = launch.id
         cdLaunch.dateTimeStamp = Int32(launch.dateTimeStamp)
         cdLaunch.dateUTC = launch.dateUTC
         cdLaunch.details = launch.details
@@ -24,10 +24,13 @@ extension CDLaunch {
         cdLaunch.upcoming = launch.upcoming
         
         // Launch Failures
-        launch.failures.forEach { failure in
-            cdLaunch.addToFailures(CDLaunchFailure.from(failure, in: context))
+        if !launch.failures.isEmpty {
+            let cdLaunchFailures = launch.failures.map { failure in
+                CDLaunchFailure.from(failure, in: context)
+            }
+            cdLaunch.failures?.addingObjects(from: cdLaunchFailures)
         }
-
+        
         // Launch Links
         if let links = launch.links {
             cdLaunch.links = CDLaunchLink.from(links, in: context)

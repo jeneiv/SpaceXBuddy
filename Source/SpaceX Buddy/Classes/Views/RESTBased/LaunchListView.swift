@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// REST API Based Launch List View
 struct LaunchListView: View {
     @ObservedObject var viewModel : SpaceXBuddy.LaunchesViewModel
     

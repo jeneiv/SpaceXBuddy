@@ -25,6 +25,7 @@ extension SpaceXBuddy.API {
     static var spaceXJSONDecoder : JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        decoder.nonConformingFloatDecodingStrategy = .throw
         return decoder
     }
     

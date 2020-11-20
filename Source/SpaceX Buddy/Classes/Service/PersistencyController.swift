@@ -39,6 +39,7 @@ extension SpaceXBuddy {
                     completion?(.error(error: error))
                 }
                 else {
+                    self.persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
                     completion?(.success)
                 }
             }

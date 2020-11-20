@@ -29,6 +29,7 @@
 		154AEA5225175D1E0021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
 		154AEA5725175D1F0021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
 		154AEA5C25175D200021F073 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B59F2824C1C2AD0062700F /* Logger.swift */; };
+		154F96DE254AEEA40053B4AE /* CoreDataBasedLaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F96DD254AEEA40053B4AE /* CoreDataBasedLaunchListView.swift */; };
 		1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552733424F7A4910033A3FF /* CountdownHelper.swift */; };
 		15546C8324F6D13A001C080D /* LaunchCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15546C8224F6D13A001C080D /* LaunchCountdownView.swift */; };
 		155FF9D224FE32960088B54C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AE59C24AD1726003359B4 /* RequestBuilder.swift */; };
@@ -43,6 +44,8 @@
 		156B9912254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */; };
 		1582FA6224D9927F0056A806 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FA6124D9927F0056A806 /* ImageGalleryView.swift */; };
 		15A2D0432548497B00C37816 /* StringArrayValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */; };
+		15A5684D2566AC030046D720 /* StoredLaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5684C2566AC030046D720 /* StoredLaunchesViewModel.swift */; };
+		15A568822566B4B60046D720 /* FetchRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A568812566B4B60046D720 /* FetchRequest+Extensions.swift */; };
 		15B10736254AB1C20055CA3C /* CDLaunchLink+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */; };
 		15B87A5724F9059E002A43E6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5624F9059E002A43E6 /* WidgetKit.framework */; };
 		15B87A5924F9059E002A43E6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B87A5824F9059E002A43E6 /* SwiftUI.framework */; };
@@ -119,6 +122,7 @@
 		150AE5BA24AE1F11003359B4 /* LaunchBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchBadgeView.swift; sourceTree = "<group>"; };
 		153BB6C824F6A57B0026EB01 /* LaunchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListItemView.swift; sourceTree = "<group>"; };
 		153BB6CA24F6A5F60026EB01 /* LaunchLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLinksView.swift; sourceTree = "<group>"; };
+		154F96DD254AEEA40053B4AE /* CoreDataBasedLaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBasedLaunchListView.swift; sourceTree = "<group>"; };
 		1552733424F7A4910033A3FF /* CountdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHelper.swift; sourceTree = "<group>"; };
 		15546C8224F6D13A001C080D /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
 		155FF9D024FE321F0088B54C /* WidgetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataService.swift; sourceTree = "<group>"; };
@@ -131,6 +135,9 @@
 		156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLaunchFaliure+Extensions.swift"; sourceTree = "<group>"; };
 		1582FA6124D9927F0056A806 /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
 		15A2D0422548497B00C37816 /* StringArrayValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringArrayValueTransformer.swift; sourceTree = "<group>"; };
+		15A5684C2566AC030046D720 /* StoredLaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLaunchesViewModel.swift; sourceTree = "<group>"; };
+		15A568812566B4B60046D720 /* FetchRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchRequest+Extensions.swift"; sourceTree = "<group>"; };
+		15A568872567B7500046D720 /* CoreDataBasedLaunchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBasedLaunchDetailsView.swift; sourceTree = "<group>"; };
 		15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLaunchLink+Extensions.swift"; sourceTree = "<group>"; };
 		15B59F2824C1C2AD0062700F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		15B87A5424F9059E002A43E6 /* SpaceXBuddy WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SpaceXBuddy WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,10 +288,10 @@
 		150AE5A624ADE049003359B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15B1073D254AE7530055CA3C /* CoreDataBased */,
+				15B1073C254AE7470055CA3C /* RESTBased */,
 				153BB6C724F6A5680026EB01 /* AccessoryViews */,
 				150AE5A724ADE059003359B4 /* MainView.swift */,
-				156AA10C24C1811A00E0C308 /* LaunchListView.swift */,
-				15E7340324CAD4EA00F83C4C /* LaunchDetailsView.swift */,
 				1582FA6124D9927F0056A806 /* ImageGalleryView.swift */,
 			);
 			path = Views;
@@ -297,6 +304,7 @@
 				150AE5A324AD21EC003359B4 /* Launch.swift */,
 				156AA10E24C1816A00E0C308 /* LaunchesViewModel.swift */,
 				156507412517CAF30024812B /* LaunchNotificationModel.swift */,
+				15A5684C2566AC030046D720 /* StoredLaunchesViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,8 +359,27 @@
 				156B98FF254AAC83008C4576 /* CDLaunch+Extensions.swift */,
 				156B9911254AAFA7008C4576 /* CDLaunchFaliure+Extensions.swift */,
 				15B10735254AB1C20055CA3C /* CDLaunchLink+Extensions.swift */,
+				15A568812566B4B60046D720 /* FetchRequest+Extensions.swift */,
 			);
 			path = CoreDataExtensons;
+			sourceTree = "<group>";
+		};
+		15B1073C254AE7470055CA3C /* RESTBased */ = {
+			isa = PBXGroup;
+			children = (
+				156AA10C24C1811A00E0C308 /* LaunchListView.swift */,
+				15E7340324CAD4EA00F83C4C /* LaunchDetailsView.swift */,
+			);
+			path = RESTBased;
+			sourceTree = "<group>";
+		};
+		15B1073D254AE7530055CA3C /* CoreDataBased */ = {
+			isa = PBXGroup;
+			children = (
+				154F96DD254AEEA40053B4AE /* CoreDataBasedLaunchListView.swift */,
+				15A568872567B7500046D720 /* CoreDataBasedLaunchDetailsView.swift */,
+			);
+			path = CoreDataBased;
 			sourceTree = "<group>";
 		};
 		15B87A5524F9059E002A43E6 /* Frameworks */ = {
@@ -570,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A5684D2566AC030046D720 /* StoredLaunchesViewModel.swift in Sources */,
 				15672FBC2538774D005E8547 /* PersistencyController.swift in Sources */,
 				156B9900254AAC83008C4576 /* CDLaunch+Extensions.swift in Sources */,
 				153BB6C924F6A57B0026EB01 /* LaunchListItemView.swift in Sources */,
@@ -580,6 +608,7 @@
 				153BB6CB24F6A5F60026EB01 /* LaunchLinksView.swift in Sources */,
 				15E7340424CAD4EA00F83C4C /* LaunchDetailsView.swift in Sources */,
 				150AE5A824ADE059003359B4 /* MainView.swift in Sources */,
+				154F96DE254AEEA40053B4AE /* CoreDataBasedLaunchListView.swift in Sources */,
 				1552733524F7A4910033A3FF /* CountdownHelper.swift in Sources */,
 				150AE5A124AD1A3D003359B4 /* URLExtension.swift in Sources */,
 				156507422517CAF30024812B /* LaunchNotificationModel.swift in Sources */,
@@ -587,6 +616,7 @@
 				15D36CFA2517AA9C00B79CFC /* SpaceXBuddyAppDelegate.swift in Sources */,
 				15B10736254AB1C20055CA3C /* CDLaunchLink+Extensions.swift in Sources */,
 				15E7340224C9786A00F83C4C /* AsyncImageView.swift in Sources */,
+				15A568822566B4B60046D720 /* FetchRequest+Extensions.swift in Sources */,
 				150AE5BB24AE1F11003359B4 /* LaunchBadgeView.swift in Sources */,
 				15672FC725387C4A005E8547 /* SpaceXBuddy.xcdatamodeld in Sources */,
 				150AE5AC24ADFE35003359B4 /* Launch.swift in Sources */,

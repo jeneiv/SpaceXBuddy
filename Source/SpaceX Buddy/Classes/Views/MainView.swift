@@ -18,10 +18,10 @@ struct MainView: View {
                         .shadow(radius: 10)
                     Spacer()
                 }
-                NavigationLink(destination: CoreDataBasedLaunchListView(launchListType: .upcoming).environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)) {
+                NavigationLink(destination: LaunchListView(launchListType: .upcoming).environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)) {
                     Text("Upcoming Launches")
                 }
-                NavigationLink(destination: CoreDataBasedLaunchListView(launchListType: .past).environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)) {
+                NavigationLink(destination: LaunchListView(launchListType: .past).environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)) {
                     Text("Past Launches")
                 }
             }

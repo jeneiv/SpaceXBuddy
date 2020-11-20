@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoreDataBasedLaunchListView: View {
+struct LaunchListView: View {
     @Environment(\.managedObjectContext) var viewContext
 
     // NOTE: you can also go with this solution, but then you can't configure the fetch request
@@ -35,7 +35,7 @@ struct CoreDataBasedLaunchListView: View {
     
     var body: some View {
         List (launches) { launch in
-            NavigationLink(destination: CoreDataBasedLaunchDetailsView(launch: launch)) {
+            NavigationLink(destination: LaunchDetailsView(launch: launch)) {
                 LaunchListItemView(launch: launch)
             }
         }
@@ -51,6 +51,6 @@ struct CoreDataBasedLaunchListView: View {
 
 struct CoreDataBasedLaunchListView_Previews: PreviewProvider {
     static var previews: some View {
-        CoreDataBasedLaunchListView(launchListType: .past)
+        LaunchListView(launchListType: .past)
     }
 }

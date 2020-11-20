@@ -39,7 +39,7 @@ struct LaunchListView: View {
                 LaunchListItemView(launch: launch)
             }
         }
-        .navigationBarTitle(viewModel.screenTitle())
+        .navigationBarTitle(viewModel.screenTitle(), displayMode: .inline)
         .onAppear() {
             viewModel.fetch()
         }

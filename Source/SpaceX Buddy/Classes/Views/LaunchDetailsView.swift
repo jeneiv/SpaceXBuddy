@@ -45,7 +45,7 @@ struct LaunchDetailsView: View {
             }
             .padding()
             .font(.subheadline)
-            .navigationBarTitle (Text(launch.name ?? ""))
+            .navigationBarTitle (Text(launch.name ?? ""), displayMode: .large)
             .alert(isPresented: $launchNotificationModel.notificationsDisabled, content: {
                 Alert(title: Text("Notification Error"),
                       message: Text("Please turn on notifications for the application"),

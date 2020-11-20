@@ -34,19 +34,9 @@ struct CoreDataBasedLaunchListView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(launches) { launch in
-                HStack {
-                    LaunchBadgeView(imageURL: launch.links?.patch?.small)
-                    .frame(width: 60, height: 60, alignment: .center)
-                        
-                    VStack (alignment: .leading) {
-                        Text(launch.name ?? "")
-                        Text(dateFormatter.string(from: launch.localDate!))
-                        Spacer()
-                    }
-                    .font(.subheadline)
-                }
+        List (launches) { launch in
+            NavigationLink(destination: CoreDataBasedLaunchDetailsView(launch: launch)) {
+                LaunchListItemView(launch: launch)
             }
         }
         .navigationBarTitle(viewModel.screenTitle())

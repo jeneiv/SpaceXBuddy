@@ -25,10 +25,10 @@ extension CDLaunch {
         
         // Launch Failures
         if !launch.failures.isEmpty {
-            let cdLaunchFailures = launch.failures.map { failure in
-                CDLaunchFailure.from(failure, in: context)
+            launch.failures.forEach { (faliure : SpaceXBuddy.Launch.Failure) in
+                let cdFaliure = CDLaunchFailure.from(faliure, in: context)
+                cdFaliure.launch = cdLaunch
             }
-            cdLaunch.failures?.addingObjects(from: cdLaunchFailures)
         }
         
         // Launch Links
@@ -37,5 +37,10 @@ extension CDLaunch {
         }
         
         return cdLaunch
+    }
+    
+    func faliuresArray() -> [CDLaunchFailure] {
+        let set = failures as? Set<CDLaunchFailure> ?? []
+        return set.sorted()
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 extension CDLaunchFailure {
     static func from(_ failure: SpaceXBuddy.Launch.Failure, in context: NSManagedObjectContext) -> CDLaunchFailure {
@@ -15,5 +16,11 @@ extension CDLaunchFailure {
         cdFailure.altitude = failure.altitude ?? 0.0
         cdFailure.reason = failure.reason
         return cdFailure
+    }
+}
+
+extension CDLaunchFailure: Comparable {
+    public static func < (lhs: CDLaunchFailure, rhs: CDLaunchFailure) -> Bool {
+        lhs.time < rhs.time
     }
 }

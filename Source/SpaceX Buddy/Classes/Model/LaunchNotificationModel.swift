@@ -14,10 +14,10 @@ extension SpaceXBuddy {
         @Published private (set) var hasPendingNotification : Bool = false
         @Published var notificationsDisabled : Bool = false
         
-        private let launch : Launch
+        private let launch : CDLaunch
         private var notificationCenter : UNUserNotificationCenter = UNUserNotificationCenter.current()
         
-        init(launch: Launch) {
+        init(launch: CDLaunch) {
             self.launch = launch
             getPendingNotificationState()
         }
@@ -35,7 +35,7 @@ extension SpaceXBuddy {
             notificationCenter.getPendingNotificationRequests { (pendingNotificationRequests: [UNNotificationRequest]) in
                 DispatchQueue.main.async {
                     self.hasPendingNotification = pendingNotificationRequests.first(where: { (notificationRequest: UNNotificationRequest) -> Bool in
-                        notificationRequest.identifier == self.launch.id
+                        notificationRequest.identifier == self.launch.launchID
                     }) != Optional.none
                 }
             }
@@ -43,9 +43,12 @@ extension SpaceXBuddy {
         
         private func addLaunchNotification() {
             SpaceXBuddy.logger.debug("Adding Notification Request")
+            guard let launchID = self.launch.launchID, let launchDate = launch.localDate else {
+                return
+            }
             notificationCenter.requestAuthorization(options: [.alert, .sound]) { (didAllow: Bool, error: Error?) in
                 if didAllow {
-                    let request = UNNotificationRequest(identifier: self.launch.id, content: UNNotificationContent.build(from: self.launch), trigger: UNCalendarNotificationTrigger.build(from: self.launch))
+                    let request = UNNotificationRequest(identifier: launchID, content: UNNotificationContent.build(from: self.launch), trigger: UNCalendarNotificationTrigger.build(from: launchDate))
                     
                     self.notificationCenter.add(request) { (error: Error?) in
                         DispatchQueue.main.async {
@@ -64,7 +67,10 @@ extension SpaceXBuddy {
         
         private func removePendingNotification() {
             SpaceXBuddy.logger.debug("Removing Notification Request")
-            notificationCenter.removePendingNotificationRequests(withIdentifiers: [self.launch.id])
+            guard let launchID = self.launch.launchID else {
+                return
+            }
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: [launchID])
             hasPendingNotification = false
         }
     }
@@ -72,11 +78,11 @@ extension SpaceXBuddy {
 
 
 fileprivate extension UNNotificationContent {
-    static func build(from launch: SpaceXBuddy.Launch) -> UNNotificationContent {
+    static func build(from launch: CDLaunch) -> UNNotificationContent {
         let notificationContent = UNMutableNotificationContent()
         
         notificationContent.title = "SpaceX Launch Reminder"
-        notificationContent.body = "\(launch.name) is about to launch"
+        notificationContent.body = "\(launch.name ?? "Unknown") is about to launch"
         notificationContent.sound = UNNotificationSound.default
         
         return notificationContent
@@ -84,8 +90,8 @@ fileprivate extension UNNotificationContent {
 }
 
 fileprivate extension UNCalendarNotificationTrigger {
-    static func build(from launch: SpaceXBuddy.Launch) -> UNCalendarNotificationTrigger {
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: launch.localDate)
+    static func build(from launchDate: Date) -> UNCalendarNotificationTrigger {
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: launchDate)
         return UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
     }
 }

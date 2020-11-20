@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDLaunch" representedClassName="CDLaunch" syncable="YES" codeGenerationType="class">
         <attribute name="dateTimeStamp" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dateUTC" attributeType="String"/>
@@ -9,7 +9,7 @@
         <attribute name="localDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="upcoming" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="failures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDLaunchFailure"/>
+        <relationship name="failures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDLaunchFailure" inverseName="launch" inverseEntity="CDLaunchFailure"/>
         <relationship name="links" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CDLaunchLink"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -22,6 +22,7 @@
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reason" attributeType="String"/>
         <attribute name="time" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="launch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLaunch" inverseName="failures" inverseEntity="CDLaunch"/>
     </entity>
     <entity name="CDLaunchFlickrLink" representedClassName="CDLaunchFlickrLink" syncable="YES" codeGenerationType="class">
         <attribute name="original" attributeType="Transformable" valueTransformerName="StringArrayValueTransformer" customClassName="[String]"/>
@@ -46,7 +47,7 @@
     </entity>
     <elements>
         <element name="CDLaunch" positionX="-119.58984375" positionY="-168.9140625" width="128" height="193"/>
-        <element name="CDLaunchFailure" positionX="165.09375" positionY="-168.171875" width="128" height="88"/>
+        <element name="CDLaunchFailure" positionX="156.74609375" positionY="-230.96875" width="128" height="103"/>
         <element name="CDLaunchFlickrLink" positionX="345.83203125" positionY="75.80078125" width="128" height="73"/>
         <element name="CDLaunchLink" positionX="164.875" positionY="-103.5390625" width="128" height="118"/>
         <element name="CDLaunchPatch" positionX="-127.9140625" positionY="195.0859375" width="128" height="73"/>

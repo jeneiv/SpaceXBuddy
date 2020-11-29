@@ -1,33 +1,27 @@
 //
-//  LaunchesViewModel.swift
+//  StoredLAunchesViewModel.swift
 //  SpaceX Buddy
 //
-//  Created by Jenei Viktor on 2020. 07. 17..
+//  Created by Jenei Viktor on 2020. 11. 19..
 //
 
 import Foundation
+import SwiftUI
 import Combine
+import CoreData
 
 extension SpaceXBuddy {
-    class LaunchesViewModel : ObservableObject {
+    class StoredLaunchesViewModel : ObservableObject {
         enum DataType {
             case past
             case upcoming
             case all
             case next
         }
-                
-        enum SortOrder {
-            case ascending
-            case descending
-        }
-        
-        @Published private (set) var launches = [SpaceXBuddy.Launch]()
+
         @Published private (set) var isLoading = false
-        
-        var dataType : DataType
-        var sortOrder : SortOrder
-        
+
+        private let dataType : DataType
         private var cancellable: AnyCancellable?
         private var decoder : JSONDecoder {
             let decoder = JSONDecoder()
@@ -35,9 +29,8 @@ extension SpaceXBuddy {
             return decoder
         }
         
-        init(dataType : DataType = .all, sortOrder : SortOrder = .descending) {
+        init(dataType: DataType) {
             self.dataType = dataType
-            self.sortOrder = sortOrder
         }
         
         func fetch() {
@@ -73,45 +66,24 @@ extension SpaceXBuddy {
         }
         
         private func handleResult(_ result: [SpaceXBuddy.Launch]) {
-            var result = result
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                let context = PersistencyController.shared.backgroundContext
+                context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+                
+                context.performAndWait {
+                    let _ = result.map { launch in
+                        CDLaunch.from(launch, in: context)
+                    }
+                }
 
-            sortResult(&result)
-            filterResult(&result)
-            
-            self.launches = result
-        }
-        
-        private func sortResult(_ result: inout [SpaceXBuddy.Launch]) {
-            if self.dataType == .next {
-                if let nextLaunch = result.sorted(by: { (lhs : SpaceXBuddy.Launch, rhs : SpaceXBuddy.Launch) -> Bool in
-                    lhs.dateTimeStamp < rhs.dateTimeStamp
-                }).first {
-                    result = [nextLaunch]
+                do {
+                    try context.save()
+                    SpaceXBuddy.logger.info("Save successful")
                 }
-            }
-            else if self.sortOrder == .ascending {
-                result = result.sorted(by: { (lhs : SpaceXBuddy.Launch, rhs : SpaceXBuddy.Launch) -> Bool in
-                    lhs.dateTimeStamp < rhs.dateTimeStamp
-                })
-            }
-            else {
-                result = result.sorted(by: { (lhs : SpaceXBuddy.Launch, rhs : SpaceXBuddy.Launch) -> Bool in
-                    lhs.dateTimeStamp > rhs.dateTimeStamp
-                })
-            }
-        }
-        
-        private func filterResult(_ result: inout [SpaceXBuddy.Launch]) {
-            // Filtering Logic, because the API sometimes provides past launches in the upcoming response and vice versa
-            if self.dataType == .upcoming {
-                result = result.filter { launch in
-                    launch.localDate >= Date()
+                catch let e {
+                    SpaceXBuddy.logger.critical("Context Save Failed with \(e.localizedDescription)")
                 }
-            }
-            else if self.dataType == .past {
-                result = result.filter { launch in
-                    launch.localDate <= Date()
-                }
+                
             }
         }
         
@@ -119,14 +91,25 @@ extension SpaceXBuddy {
             self.cancellable?.cancel()
         }
         
-        func onStart() {
+        func screenTitle() -> String {
+            switch dataType {
+            case .upcoming:
+                return "Upcoming launches"
+            case .past:
+                return "Past launches"
+            default:
+                return ""
+            }
+        }
+        
+        private func onStart() {
             isLoading = true
         }
         
-        func onFinish() {
+        private func onFinish() {
             isLoading = false
         }
-        
+
         private func request(for dataType: DataType) -> URLRequest {
             switch dataType {
             case .past:
@@ -136,22 +119,6 @@ extension SpaceXBuddy {
             case .all:
                 return SpaceXBuddy.API.allLaunchesRequest()
             }
-        }
-    }
-}
-
-
-extension SpaceXBuddy.LaunchesViewModel.DataType {
-    func navigationTitle() -> String {
-        switch self {
-        case .past:
-            return "Past Launches"
-        case .upcoming:
-            return "Upcoming Launches"
-        case .all:
-            return "Launches"
-        case .next:
-            return "Next Launch"
         }
     }
 }

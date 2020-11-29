@@ -18,16 +18,17 @@ struct MainView: View {
                         .shadow(radius: 10)
                     Spacer()
                 }
-                NavigationLink(destination: LaunchListView(viewModel: SpaceXBuddy.LaunchesViewModel(dataType: SpaceXBuddy.LaunchesViewModel.DataType.upcoming, sortOrder: SpaceXBuddy.LaunchesViewModel.SortOrder.ascending))) {
+                NavigationLink(destination: LaunchListView(launchListType: .upcoming)) {
                     Text("Upcoming Launches")
                 }
-                NavigationLink(destination: LaunchListView(viewModel: SpaceXBuddy.LaunchesViewModel(dataType: SpaceXBuddy.LaunchesViewModel.DataType.past, sortOrder: SpaceXBuddy.LaunchesViewModel.SortOrder.descending))) {
+                NavigationLink(destination: LaunchListView(launchListType: .past)) {
                     Text("Past Launches")
                 }
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
+        .environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)
     }
 }
 

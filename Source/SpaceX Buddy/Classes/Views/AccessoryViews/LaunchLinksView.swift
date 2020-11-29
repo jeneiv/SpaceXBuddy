@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LaunchLinksView: View {
-    var launch: SpaceXBuddy.Launch
+    var launch: CDLaunch
     
     var body: some View {
         VStack {
@@ -16,9 +16,9 @@ struct LaunchLinksView: View {
                 .frame(width: 50, height: 50)
             SingleURLLaunchLinkButton(urlString: launch.links?.wikipedia, imageName: "wikipedia")
                 .frame(width: 50, height: 50)
-            SingleURLLaunchLinkButton(urlString: launch.links?.reddit.campaign, imageName: "reddit")
+            SingleURLLaunchLinkButton(urlString: launch.links?.reddit?.campaign, imageName: "reddit")
                 .frame(width: 50, height: 50)
-            ImageGalleryLaunchLinkButton(imageURLStrings: launch.links?.flickr.original ?? [], imageName: "flickr")
+            ImageGalleryLaunchLinkButton(imageURLStrings: launch.links?.flickr?.original ?? [], imageName: "flickr")
                 .frame(width: 50, height: 50)
         }
         .padding(.trailing)

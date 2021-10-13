@@ -8,7 +8,11 @@
 import Foundation
 
 @objc(StringArrayValueTransformer)
-class StringArrayValueTransformer : ValueTransformer {
+class StringArrayValueTransformer : NSSecureUnarchiveFromDataTransformer {
+    override class var allowedTopLevelClasses: [AnyClass] {
+        [NSArray.self, NSString.self]
+    }
+
     override class func transformedValueClass() -> AnyClass {
         NSArray.self
     }

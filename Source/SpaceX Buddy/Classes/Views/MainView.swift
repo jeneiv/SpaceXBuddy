@@ -12,11 +12,7 @@ struct MainView: View {
         NavigationView {
             List {
                 HStack {
-                    Spacer()
                     Image("SpaceXLogo")
-                        .frame(height: 80)
-                        .shadow(radius: 10)
-                    Spacer()
                 }
                 NavigationLink(destination: LaunchListView(launchListType: .upcoming)) {
                     Text("Upcoming Launches")

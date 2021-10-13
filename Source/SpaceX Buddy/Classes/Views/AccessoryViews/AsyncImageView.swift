@@ -20,20 +20,19 @@ struct AsyncImageView: View {
     
     var body: some View {
         ZStack {
-            if let image = imageLoader.image {
+            switch imageLoader.state {
+            case .undefined, .failed:
+                EmptyView()
+            case .loaded(image: let image):
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            }
-            else {
+            case .loading:
                 ProgressView()
             }
         }
-        .onAppear {
-            imageLoader.load()
-        }
-        .onDisappear {
-            imageLoader.cancel()
+        .task {
+            await imageLoader.loadImage()
         }
     }
 }
@@ -43,59 +42,50 @@ extension AsyncImageView {
         static let shared = NSCache<NSURL, UIImage>()
     }
     
+    @MainActor
     fileprivate class Loader : ObservableObject {
-        @Published var image : UIImage?
+        enum State {
+            case undefined
+            case loading
+            case loaded(image: UIImage)
+            case failed
+        }
+        
+        @Published var state: State = .undefined
+
+        func loadImage() async {
+            guard let url = url else {
+                return
+            }
+            if let cachedImage = Cache.shared.object(forKey: url as NSURL) {
+                state = .loaded(image: cachedImage)
+            } else {
+                state = .loading
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: url)
+                    if let image = UIImage(data: data) {
+                        addToCache(image)
+                        state = .loaded(image: image)
+                    } else {
+                        state = .failed
+                    }
+                } catch {
+                    state = .failed
+                }
+            }
+        }
         
         let url : URL?
-        
-        private static let imageProcessingQueue = DispatchQueue(label: "com.spacexbuddy.imageprocessing")
-        private var isLoading = false
-        private var cancellable: AnyCancellable?
         
         init(url: URL?) {
             self.url = url
         }
         
-        func load() {
-            guard let url = url, !isLoading else {
-                return
-            }
-            if let cachedImage = Cache.shared.object(forKey: url as NSURL) {
-                image = cachedImage
-            }
-            else {
-                cancellable = URLSession.shared.dataTaskPublisher(for: url)
-                    .map { UIImage(data: $0.data) }
-                    .replaceError(with: Optional.none)
-                    .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
-                                  receiveOutput: { [weak self] in self?.addToCache($0) },
-                                  receiveCompletion: { [weak self] _ in self?.onFinish() },
-                                  receiveCancel: { [weak self] in self?.onFinish() })
-                    .subscribe(on: Self.imageProcessingQueue)
-                    .receive(on: DispatchQueue.main)
-                    .assign(to: \.image, on: self)
-            }
-        }
-        
-        private func addToCache(_ image: UIImage?) {
+        private func addToCache(_ image: UIImage) {
             guard let url = url else {
                 return
             }
-            if let image = image {
-                Cache.shared.setObject(image, forKey: url as NSURL)
-            }
-        }
-        
-        func cancel() {
-            cancellable?.cancel()
-        }
-        
-        private func onStart() {
-            isLoading = true
-        }
-        
-        private func onFinish() {
-            isLoading = false
+            Cache.shared.setObject(image, forKey: url as NSURL)
         }
     }
 }

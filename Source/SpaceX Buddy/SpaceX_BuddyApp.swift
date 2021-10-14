@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct SpaceX_BuddyApp: App {
-    // In case you still need an AppDelegate Instance (e.g. fetch remote notifications), you can regiter it this way
+    // In case you still need an AppDelegate Instance (e.g. fetch remote notifications), you can register it this way
     @UIApplicationDelegateAdaptor private var appDelegate :  SpaceXBuddyAppDelegate
     
     var body: some Scene {

@@ -21,7 +21,6 @@ struct MainView: View {
                     Text("Past Launches")
                 }
             }
-            .navigationBarTitle("")
             .navigationBarHidden(true)
         }
         .environment(\.managedObjectContext, SpaceXBuddy.PersistencyController.shared.viewContext)

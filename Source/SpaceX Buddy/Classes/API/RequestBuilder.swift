@@ -20,6 +20,7 @@ extension SpaceXBuddy.API {
         case upcomingLaunches = "v4/launches/upcoming"
         case pastLaunches = "v4/launches/past"
         case launches = "v4/launches"
+        case roadster = "v4/roadster"
     }
     
     static var spaceXJSONDecoder : JSONDecoder {
@@ -30,21 +31,25 @@ extension SpaceXBuddy.API {
     }
     
     static func upcomingLaunchesRequest() -> URLRequest {
-        return URLRequest(url: URL(Path.upcomingLaunches)!)
+        URLRequest(url: URL(Path.upcomingLaunches)!)
     }
 
     static func pastLaunchesRequest() -> URLRequest {
-        return URLRequest(url: URL(Path.pastLaunches)!)
+        URLRequest(url: URL(Path.pastLaunches)!)
     }
     
     static func allLaunchesRequest() -> URLRequest {
-        return URLRequest(url: URL(Path.launches)!)
+        URLRequest(url: URL(Path.launches)!)
     }
     
     static func launchRequest(for id: String) -> URLRequest {
         var url = URL(Path.launches)
         url?.appendPathComponent(id)
         return URLRequest(url: url!)
+    }
+
+    static func roadsterInfoRequest() -> URLRequest {
+        URLRequest(url: URL(Path.roadster)!)
     }
     
     // TODO: Add Later (maybe)
